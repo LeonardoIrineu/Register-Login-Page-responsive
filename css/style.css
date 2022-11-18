@@ -59,18 +59,45 @@ body {
 
 .login-button button {
     border: none;
-    background-color: #6c63ff;
+    /* background-color: #6c63ff; */
     padding: 0.4rem 1rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.login-button button:hover {
-    background-color: #6b63fff1;
+.login-button::before {
+    content: '';
+    position: absolute;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    width: 40px;
+    height: 20px;
+    background: conic-gradient(#4137ff, #756efdf1);
+    animation: efeito 1.3s ease infinite;
+    transition: 1s ease;
 }
 
-.login-button button a {
+@keyframes efeito {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-button button:hover .login-button::before {
+    background-color: #756efdf1;
+}
+
+.login-button {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 147px;
+    height: 30px;
+    background: #271cf0;
+    text-align: center;
+    line-height: 10px;
     text-decoration: none;
+    border-radius: 5px;
     font-weight: 500;
     color: #fff;
 }
